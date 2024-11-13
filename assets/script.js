@@ -48,26 +48,31 @@ const cardItem = (Members) => {
   for (let i = 0; i < teamMembers.length; i++) {
 
     const currItem = teamMembers[i];
-  
+
     let { name, role, email, img } = currItem;
-  
+
     console.log(name);
     console.log(role);
     console.log(email);
     console.log(img);
 
-  cardElem.innerHTML += `
+    cardElem.innerHTML += `
 
-  <div>${name}</div>
-  <span>${role}</span>
-  <span>${email}</span>
-  <span>${img}</span>
-  <br><br>
+  <div class="card col-3 "  >
+                    <img src="./assets/${img}" class="card-img-top" alt="..." >
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <h5>${name}</h5>
+                        </li>
+                        <li class="list-group-item">${role}</li>
+                        <li class="list-group-item"><a href="" class="card-link">${email}</a></li>
+                    </ul>
+                </div>
 
 
 `;
 
-}
+  }
 };
 
 console.log(cardItem(teamMembers));
